@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slowed + Reverb Studio</title>
+    <meta name="description"
+        content="Create slowed and reverb versions of your favorite songs with real-time audio processing">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Slowed + Reverb Studio</h1>
+            <p class="subtitle">Transform your music with professional audio effects</p>
+        </header>
+
+        <div class="songs-section glass-card" id="songsSection" style="display: none;">
+            <div class="songs-header">
+                <h2>Your Songs</h2>
+                <button class="add-song-btn" id="addSongBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Add Song
+                </button>
+            </div>
+            <div class="songs-list" id="songsList"></div>
+        </div>
+
+        <div class="upload-section glass-card">
+            <div class="upload-area" id="uploadArea">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <h2>Drop your audio file here</h2>
+                <p>or click to browse</p>
+                <p class="file-types">Supports MP3, WAV, OGG, M4A</p>
+                <input type="file" id="fileInput" accept="audio/*" hidden>
+            </div>
+            <div class="file-info" id="fileInfo" style="display: none;">
+                <div class="file-details">
+                    <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                    <div>
+                        <p class="file-name" id="fileName"></p>
+                        <p class="file-size" id="fileSize"></p>
+                    </div>
+                </div>
+                <button class="change-file-btn" id="changeFileBtn">Change File</button>
+            </div>
+        </div>
+
+        <div class="controls-section glass-card" id="controlsSection" style="display: none;">
+            <div class="playback-controls">
+                <button class="play-btn" id="playBtn">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z"></path>
+                    </svg>
+                </button>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span class="time-separator">/</span>
+                    <span id="duration">0:00</span>
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="effects-grid">
+                <div class="effect-control">
+                    <div class="effect-header">
+                        <label for="speedSlider">Speed</label>
+                        <span class="effect-value" id="speedValue">100%</span>
+                    </div>
+                    <input type="range" id="speedSlider" min="50" max="100" value="100" step="1" class="slider">
+                    <div class="slider-labels">
+                        <span>50%</span>
+                        <span>75%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+
+                <div class="effect-control">
+                    <div class="effect-header">
+                        <label for="reverbSlider">Reverb</label>
+                        <span class="effect-value" id="reverbValue">0%</span>
+                    </div>
+                    <input type="range" id="reverbSlider" min="0" max="100" value="0" step="1" class="slider">
+                    <div class="slider-labels">
+                        <span>0%</span>
+                        <span>50%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+
+                <div class="effect-control">
+                    <div class="effect-header">
+                        <label for="pitchToggle">Pitch Shift</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="pitchToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="range" id="pitchSlider" min="-12" max="12" value="0" step="1" class="slider" disabled>
+                    <div class="slider-labels">
+                        <span>-12</span>
+                        <span>0</span>
+                        <span>+12</span>
+                    </div>
+                </div>
+
+                <div class="effect-control">
+                    <div class="effect-header">
+                        <label for="bassBoostToggle">Bass Boost</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="bassBoostToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="range" id="bassBoostSlider" min="0" max="20" value="10" step="1" class="slider"
+                        disabled>
+                    <div class="slider-labels">
+                        <span>0dB</span>
+                        <span>10dB</span>
+                        <span>20dB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="secondary-btn" id="resetBtn">Reset All</button>
+                <button class="primary-btn" id="downloadWavBtn">Download WAV</button>
+                <button class="primary-btn" id="downloadMp3Btn">Download MP3</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.0/lame.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
