@@ -1,4 +1,15 @@
 (() => {
+  const f4Icon = "f4-icon.svg";
+  const existingIconLinks = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
+  existingIconLinks.forEach((link) => { link.href = f4Icon; link.type = "image/svg+xml"; });
+  if (!document.querySelector('link[rel="icon"][href="f4-icon.svg"]')) {
+    const iconLink = document.createElement("link");
+    iconLink.rel = "icon";
+    iconLink.type = "image/svg+xml";
+    iconLink.href = f4Icon;
+    document.head.appendChild(iconLink);
+  }
+
   let deferredInstallPrompt = null;
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();

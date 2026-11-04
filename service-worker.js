@@ -1,4 +1,4 @@
-const CACHE_NAME = "f4-reverbs-v3.2.7";
+const CACHE_NAME = "f4-reverbs-v3.2.8";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const APP_SHELL = [
   "./f4-ui.css",
   "./scroll-fix.css",
   "./f4-mobile-controls.js",
+  "./f4-icon.svg",
   "./favicon.ico",
   "./android-chrome-192x192.png",
   "./android-chrome-512x512.png"

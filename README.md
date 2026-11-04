@@ -20,6 +20,7 @@ This repository contains the production-ready static site. It can be opened loca
 - **Local memory** — custom presets and recent sessions persist in browser storage. Nothing is uploaded.
 - **Waveform-first workflow** — click or drag the waveform to scrub, loop sections, watch the master meter and export the exact sound you shaped.
 - **Installable PWA** — add F4 REVERBS to your phone or desktop home screen, with a service worker for repeat/offline shell loading.
+- **F4 identity mark** — app and browser icons use the original text-only green `F4` mark instead of music artwork.
 - **Static-host ready** — Next.js static export, no backend, no paid API and no server-side audio queue.
 
 ## Supported workflow
