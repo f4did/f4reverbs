@@ -1,4 +1,10 @@
 (() => {
+  let deferredInstallPrompt = null;
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+  });
+
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
     window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js", { scope: "./" }).catch(() => {}), { once: true });
   }
@@ -18,7 +24,25 @@
   } catch (_) {}
 
   const boot = () => {
-    if (!document.body || document.getElementById("f4-mobile-transport")) return;
+    if (!document.body) return;
+    const topbar = document.querySelector(".f4-topbar");
+    if (topbar && !topbar.querySelector(".install-app-button")) {
+      const install = document.createElement("a");
+      install.className = "install-app-button";
+      install.href = "site.webmanifest";
+      install.setAttribute("download", "f4-reverbs.webmanifest");
+      install.setAttribute("aria-label", "Install F4 REVERBS app");
+      install.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span>INSTALL APP</span>';
+      install.addEventListener("click", async (event) => {
+        if (!deferredInstallPrompt) return;
+        event.preventDefault();
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+      });
+      topbar.insertBefore(install, topbar.querySelector(".icon-button"));
+    }
+    if (document.getElementById("f4-mobile-transport")) return;
     const bar = document.createElement("nav");
     bar.id = "f4-mobile-transport";
     bar.setAttribute("aria-label", "Mobile transport");

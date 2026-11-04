@@ -1,5 +1,13 @@
 /* F4 visual/player additions; intentionally does not create a scroll container. */
 :root { --f4-green: #d8ff3e; --f4-green-bright: #efffa9; --f4-ink: #080b0a; }
+.f4-topbar { min-height: 88px !important; padding: 0 30px !important; }
+.brand-lockup { gap: 13px !important; align-items: center !important; }
+.brand-mark { width: 44px !important; height: 44px !important; display: grid !important; place-items: center !important; border-radius: 12px !important; background: var(--f4-green) !important; color: var(--f4-ink) !important; font-size: 21px !important; font-weight: 900 !important; letter-spacing: -.08em !important; }
+.brand-name { font-size: 15px !important; letter-spacing: .2em !important; font-weight: 800 !important; }
+.top-meta { margin-left: auto !important; }
+.install-app-button { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; min-height: 54px !important; margin-left: 24px !important; padding: 0 25px !important; border: 0 !important; border-radius: 28px !important; background: var(--f4-green) !important; color: var(--f4-ink) !important; font: 800 13px 'DM Mono', monospace !important; letter-spacing: .08em !important; text-decoration: none !important; white-space: nowrap !important; }
+.install-app-button:hover { background: var(--f4-green-bright) !important; color: var(--f4-ink) !important; }
+.install-app-button svg { flex: 0 0 auto; }
 .wave-shell button, .wave-shell .bg-primary {
   background: var(--f4-green) !important;
   color: var(--f4-ink) !important;
@@ -23,6 +31,13 @@
 .wave-shell button:hover, .wave-shell .bg-primary:hover { background: var(--f4-green-bright) !important; }
 #f4-mobile-transport { display: none; }
 @media (max-width: 520px) {
+  .f4-topbar { min-height: 64px !important; padding: 0 8px !important; gap: 6px !important; }
+  .brand-lockup { gap: 7px !important; }
+  .brand-mark { width: 32px !important; height: 32px !important; border-radius: 9px !important; font-size: 16px !important; }
+  .brand-name { font-size: 10px !important; letter-spacing: .12em !important; }
+  .top-meta { display: none !important; }
+  .install-app-button { min-height: 34px !important; margin-left: auto !important; padding: 0 10px !important; gap: 5px !important; border-radius: 18px !important; font-size: 8px !important; }
+  .install-app-button svg { width: 13px; height: 13px; }
   html, body { overflow-x: hidden !important; }
   .wave-shell { padding-top: 16px !important; }
   .wave-shell > div { min-height: 146px !important; }
