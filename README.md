@@ -58,7 +58,7 @@ Open the hosted site in a supported browser, then choose **Install app** or **Ad
 
 ## Publish the repository
 
-The deploy directory is `slowed-reverb-studio/`. Keep its contents together: `index.html`, `_next/`, `site.webmanifest`, `service-worker.js`, the CSS files, icons and `404.html` are all part of the hosted site.
+The deploy directory is `f4reverbs/`. Keep its contents together: `index.html`, `_next/`, `site.webmanifest`, `service-worker.js`, the CSS files, icons and `404.html` are all part of the hosted site.
 
 ### Cloudflare Pages
 
@@ -67,9 +67,9 @@ Cloudflare Pages is the recommended free host for this static app.
 1. Push this repository to GitHub.
 2. In Cloudflare, open **Workers & Pages → Create application → Pages → Connect to Git**.
 3. Select the repository and configure the project:
-   - **Root directory:** `slowed-reverb-studio`
+   - **Root directory:** `f4reverbs`
    - **Build command:** leave empty
-   - **Output directory:** `.`, or `slowed-reverb-studio` if the root is not set above
+   - **Output directory:** `.`, or `f4reverbs` if the root is not set above
 4. Deploy and open the generated HTTPS URL.
 
 The site is already exported, so no server, API key or build step is required. HTTPS is important because browser installation and service workers are disabled on ordinary insecure URLs.
@@ -81,14 +81,14 @@ GitHub Pages is also supported:
 1. Push the repository to GitHub.
 2. Open **Settings → Pages**.
 3. Choose **Deploy from a branch**.
-4. Select the branch and the `/slowed-reverb-studio` folder if the Pages configuration offers a folder selection.
+4. Select the branch and the `/f4reverbs` folder if the Pages configuration offers a folder selection.
 
-If the Pages UI only publishes the repository root, move or copy the contents of `slowed-reverb-studio/` into the publishing root, preserving the relative `_next/` paths.
+If the Pages UI only publishes the repository root, move or copy the contents of `f4reverbs/` into the publishing root, preserving the relative `_next/` paths.
 
 ### Repository layout
 
 ```text
-slowed-reverb-studio/
+f4reverbs/
 ├── index.html                 # Main static entry point
 ├── 404.html                   # Branded not-found page
 ├── site.webmanifest           # Installable app metadata
