@@ -119,6 +119,10 @@ Built and directed by **[@f4did](https://t.me/f4did) on Telegram**.
 
 F4 REVERBS is a free local audio tool. Please credit the project when sharing modified versions, presets or screenshots. All processing is intended for creative use; always respect copyright and the rights of the original artists.
 
+## Contributors
+
+- **Farid / [@f4did](https://t.me/f4did)** — creator and developer
+
 ## Privacy
 
 F4 REVERBS has no upload server and no account system. Audio decoding, playback, processing and export happen in the browser. Browser history and saved presets use local browser storage. The service worker caches only the application shell, never user audio.
