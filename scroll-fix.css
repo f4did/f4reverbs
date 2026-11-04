@@ -1,0 +1,27 @@
+/* Single scroll owner: the document, not the app shell. */
+html {
+  min-height: 100%;
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: auto !important;
+}
+
+body {
+  min-height: 100%;
+  height: auto !important;
+  overflow: visible !important;
+  overscroll-behavior: auto !important;
+  touch-action: pan-y !important;
+}
+
+.f4-shell {
+  min-height: 100vh !important;
+  height: auto !important;
+  overflow: visible !important;
+  touch-action: pan-y !important;
+}
+
+@media (max-width: 520px) {
+  .f4-shell canvas { touch-action: pan-y !important; }
+}

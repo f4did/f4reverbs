@@ -1,0 +1,75 @@
+/* F4 visual/player additions; intentionally does not create a scroll container. */
+:root { --f4-green: #d8ff3e; --f4-green-bright: #efffa9; --f4-ink: #080b0a; }
+.wave-shell button, .wave-shell .bg-primary {
+  background: var(--f4-green) !important;
+  color: var(--f4-ink) !important;
+  border-color: var(--f4-green) !important;
+}
+
+/* Some mobile browsers expose a wider CSS viewport; keep transport visible there too. */
+@media (min-width: 521px) and (max-width: 768px) {
+  #f4-mobile-transport {
+    position: fixed; z-index: 1000; left: 8px; right: 8px; bottom: 8px;
+    height: 44px; display: grid !important; grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 4px; padding: 4px; background: #0b100e; border: 1px solid var(--f4-green);
+    box-shadow: 0 8px 28px rgba(0,0,0,.45);
+  }
+  #f4-mobile-transport button {
+    border: 1px solid #28312e; background: #101715; color: var(--f4-green);
+    font: 700 10px 'DM Mono', monospace; letter-spacing: .08em;
+  }
+  #f4-mobile-transport .mobile-play { background: var(--f4-green); color: var(--f4-ink); border-color: var(--f4-green); }
+}
+.wave-shell button:hover, .wave-shell .bg-primary:hover { background: var(--f4-green-bright) !important; }
+#f4-mobile-transport { display: none; }
+@media (max-width: 520px) {
+  html, body { overflow-x: hidden !important; }
+  .wave-shell { padding-top: 16px !important; }
+  .wave-shell > div { min-height: 146px !important; }
+  .wave-shell button { transform: translateY(12px); }
+  .f4-shell { padding: 7px 7px 58px !important; }
+  .f4-hero { padding: 13px 0 14px !important; }
+  .f4-hero h1 { font-size: 31px !important; line-height: .88 !important; }
+  .hero-copy { display: none !important; }
+  .eyebrow { font-size: 7px !important; margin-bottom: 8px !important; }
+  .preset-rack { padding: 10px 0 12px !important; }
+  .preset-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 3px !important; }
+  .preset-card { min-height: 32px !important; padding: 5px 4px !important; gap: 3px !important; font-size: 7px !important; }
+  .preset-card .preset-arrow { display: none !important; }
+  .tuning-lab { padding: 7px !important; margin-bottom: 6px !important; }
+  .tuning-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 3px !important; }
+  .tuning-card, .custom-tuning { min-height: 48px !important; padding: 6px !important; gap: 1px !important; }
+  .tuning-card strong { font-size: 12px !important; line-height: 1 !important; }
+  .tuning-card span, .custom-tuning { font-size: 7px !important; line-height: 1.1 !important; }
+  .tuning-card em, .tuning-disclaimer { display: none !important; }
+  .custom-tuning input { font-size: 11px !important; height: 17px !important; }
+  .track-column { padding: 9px !important; }
+  .wave-shell { padding-top: 5px !important; }
+  .wave-shell > div { height: 112px !important; min-height: 112px !important; }
+  .panel-heading { margin-bottom: 7px !important; }
+  .transport-row { margin-top: 7px !important; gap: 4px !important; }
+  .transport-main, .export-button, .transport-tool { min-height: 32px !important; padding: 0 8px !important; font-size: 9px !important; }
+  .meter-column { min-height: 92px !important; padding: 9px 10px !important; }
+  .meter-wrap { height: 22px !important; margin-top: 7px !important; }
+  .meter { height: 9px !important; min-height: 9px !important; width: 100% !important; display: block !important; }
+  .meter-fill { height: 100% !important; width: 3px; min-height: 0 !important; background: linear-gradient(90deg, #d8ff3e, #75ffb1) !important; }
+  .meter-scale, .meter-footer { font-size: 7px !important; }
+  .control-section { margin-top: 7px !important; padding: 10px !important; }
+  .control-panel { padding: 10px !important; }
+  .control-header h2, .custom-panel h2 { font-size: 16px !important; }
+  .control-panel .grid { gap: 7px 10px !important; }
+  .trim-strip, .conversion-panel, .history-panel, .saved-presets, .bottom-grid { margin-top: 7px !important; }
+  .custom-panel, .tips-panel { padding: 11px !important; }
+  .f4-footer { margin-top: 10px !important; padding-top: 9px !important; font-size: 8px !important; }
+  #f4-mobile-transport {
+    position: fixed; z-index: 1000; left: 8px; right: 8px; bottom: 8px;
+    height: 44px; display: grid; grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 4px; padding: 4px; background: #0b100e; border: 1px solid var(--f4-green);
+    box-shadow: 0 8px 28px rgba(0,0,0,.45);
+  }
+  #f4-mobile-transport button {
+    border: 1px solid #28312e; background: #101715; color: var(--f4-green);
+    font: 700 10px 'DM Mono', monospace; letter-spacing: .08em;
+  }
+  #f4-mobile-transport .mobile-play { background: var(--f4-green); color: var(--f4-ink); border-color: var(--f4-green); }
+}

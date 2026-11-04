@@ -1,0 +1,36 @@
+{
+  "id": "./",
+  "name": "F4 REVERBS — Free Local Audio Lab",
+  "short_name": "F4 REVERBS",
+  "description": "A free browser-based slowed, reverb and music manipulation studio. Audio stays on your device.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080b0a",
+  "theme_color": "#d8ff3e",
+  "categories": ["music", "multimedia", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open F4 REVERBS",
+      "short_name": "Open studio",
+      "url": "./",
+      "icons": [{ "src": "android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
