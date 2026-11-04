@@ -9,7 +9,7 @@ This repository contains the production-ready static site. It can be opened loca
 > **Your audio stays in your browser.** Files are decoded, processed, rendered and exported on your device.
 
 ![F4 REVERBS studio](/og.png)
-**Site live at --> https://f4reverbs.myifarid.workers.dev/**
+**Site live at --> (https://f4reverbs.netlify.app/)**
 ## What makes it different
 
 - **Genre lab presets** — PHONK, FUNK FLIP, QAWWALI AIR, SLOW + REVERB, NIGHTCORE, DAYCORE, TAPE GHOST and CLARITY BOOST are real parameter profiles, not decorative labels.
